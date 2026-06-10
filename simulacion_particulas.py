@@ -72,30 +72,7 @@ def main():
     print(f"En promedio, la fracción de la energía que es interna es: {fraccion_interna_promedio:.2%}")
     print("La inmensa mayoría de la energía se encuentra en forma de energía interna debido a que el movimiento aleatorio de las partículas hace que la velocidad neta del centro de masa sea cercana a cero.\n")
 
-    # Preparar el histograma
-    try:
-        plt.figure(figsize=(10, 6))
-        # Se grafican las 3 energías
-        plt.hist(k_tot_lista, bins=40, alpha=0.6, label='Energía Total', color='blue')
-        plt.hist(k_int_lista, bins=40, alpha=0.6, label='Energía Interna', color='orange')
-        
-        # Como la energía traslacional es muy pequeña, es posible que el histograma 
-        # necesite su propio eje de ser muy diferente, pero en este rango se verá pegada al 0
-        plt.hist(k_trans_lista, bins=40, alpha=0.8, label='Energía Traslacional (CM)', color='red')
-        
-        plt.xlabel('Energía (Joules)')
-        plt.ylabel('Frecuencia (Número de Simulaciones)')
-        plt.title('Histograma de Energías Cinéticas para Sistema de 100 Partículas')
-        plt.legend()
-        plt.grid(True, alpha=0.3)
-        
-        # Guardar como imagen
-        imagen_path = 'histograma_energias.png'
-        plt.savefig(imagen_path)
-        print(f"¡Histograma generado con éxito! Guardado como '{imagen_path}' en tu carpeta.")
-        
-    except Exception as e:
-        print(f"No se pudo generar la gráfica (probablemente falta la librería matplotlib): {e}")
+    # (Se eliminó la generación del histograma por petición)
 
 if __name__ == "__main__":
     main()
